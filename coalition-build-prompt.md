@@ -1,5 +1,7 @@
 # COALITION: single-file game build prompt
 
+**Technology status, October 29, 2026:** This proposed brief retains its original no-library requirement. The later p5/D3 discussion recommends p5 for interactive pixel-art scenes and considers D3 for relationships and dependencies. Those options, including alternative runtime language, are recorded in the [p5/D3 exploration AAR](aar-coalition-p5-d3-exploration.md). No library choice has been adopted or implemented. Reconcile Section 1 with the selected renderer before using this as an implementation brief.
+
 Build a complete, playable HTML5 game called COALITION. Deliver exactly one file, `index.html`, containing all HTML, CSS, JavaScript, story data, procedural graphics, and synthesized audio.
 
 COALITION is a mobile-first, turn-based political thriller. An opposition figure has lost an election and is trying to leave the country. The player is the strategist for the side they select: facilitate the escape or organize the effort to stop it. Money, reputation, and authority have different value with different people. Progress depends on securing cooperation and making arrangements that other people can actually carry out.

@@ -15,6 +15,7 @@ This index keeps the origin of COALITION, the proposed teaching sprint, and the 
 | [COALITION: reference research and game mechanics AAR](aar-coalition-game-mechanics-research.md) | The subsequent research into Papers, Please, Hundred Days, Suzerain, and Balatro; a possible turn, level, and progression; cards, dice, replay, and pixel-art presentation; and a ClosedTab record distinguishing Ron's direction from agent proposals. |
 | [COALITION: revised single-file build prompt](coalition-build-prompt.md) | A proposed implementation brief with both sides, work across turns, card effects, pursuit, ending conditions, pixel art, and offline phone/browser requirements. |
 | [COALITION: build-prompt review AAR](aar-coalition-build-prompt-review.md) | The evaluation of Ron's submitted build brief, the contradictions repaired, the agent's new choices, and the scope of work completed before making the game. |
+| [COALITION: p5/D3 exploration AAR](aar-coalition-p5-d3-exploration.md) | Interactive pixel-art scenes, a map of people and commitments, a playable service blueprint, an end-of-run reconstruction, and the proposed library change needed to retain single-file offline delivery. |
 
 ## Reading the record
 
@@ -23,6 +24,8 @@ The origin report remains the record of the earlier discussion. The checkpoint r
 The reference-research AAR follows the checkpoint discussion. Ron asked how a level and progression could work while rejecting repeated Papers, Please document checking as the way through successive checkpoints. The AAR records the four-game research and an exploratory card-driven structure. Its Varela scene, local-coordination role, and card functions are assistant proposals. Saving the assessment does not establish their adoption as game rules.
 
 Ron subsequently supplied a detailed build prompt and asked for evaluation and refinement before implementation. The revised prompt keeps its main features while defining the two sides' objectives, preparation across turns, card behavior, and ending milestones. It is a proposed build brief. The accompanying AAR records which repairs were agent decisions. No game was built in that segment.
+
+Ron then asked what p5 or D3 could add. The new exploration recommends p5 for an interactive pixel-art scene and considers D3 for focused views of relationships and work dependencies. These are interface proposals. No library has been selected, and the build prompt still contains its original no-library runtime clause with a note linking the alternatives. The initial discussion remained in chat until Ron asked whether the docs had been updated; this record closes that gap.
 
 The teaching report is a basis for developing an assignment. Its emphasis is the interpretation required before implementation: understanding the situation, mapping its dependencies, choosing a player perspective, and deciding what information and actions belong in the experience.
 
