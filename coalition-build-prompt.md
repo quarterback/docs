@@ -1,6 +1,6 @@
 # COALITION: single-file game build prompt
 
-**Technology status, October 29, 2026:** This proposed brief retains its original no-library requirement. The later p5/D3 discussion recommends p5 for interactive pixel-art scenes and considers D3 for relationships and dependencies. Those options, including alternative runtime language, are recorded in the [p5/D3 exploration AAR](aar-coalition-p5-d3-exploration.md). No library choice has been adopted or implemented. Reconcile Section 1 with the selected renderer before using this as an implementation brief.
+**Technology status, October 29, 2026:** The p5/D3 design comments and alternative runtime language are included at the end of this document. The recommendation is p5 for interactive pixel-art scenes, with D3 optional for relationships and dependencies. The library choice remains open; reconcile Section 1's no-library clause with the selected approach before implementation.
 
 Build a complete, playable HTML5 game called COALITION. Deliver exactly one file, `index.html`, containing all HTML, CSS, JavaScript, story data, procedural graphics, and synthesized audio.
 
@@ -235,3 +235,64 @@ Verify the implementation before delivering it:
 14. Hidden target information is not leaked by the map, and long actions respect the chronological interception and departure rules.
 
 Prioritize meaningful decisions, readable dialogue, recognizable pixel art, coherent consequences, replay variation, and comfortable touch interaction. Deliver the complete playable `index.html`.
+
+---
+
+## Design comments: what p5 or D3 could add
+
+These comments preserve the library discussion as design options. My recommendation is to start with **p5 for the interactive pixel-art scene and HTML/CSS for readable dialogue, cards, and controls**. Consider D3 if a substantial part of play involves exploring relationships or work dependencies.
+
+### Make the pixel scene playable
+
+Selecting a card could highlight the people, objects, or arrangements it can affect. Tap one to inspect the known requirements and consequences, then confirm the action. A successful commitment might make someone place a call, bring a worker back into the scene, change a departure board, or make a service available.
+
+The scene can show who is occupied, which arrangements are unfinished, and what has become possible. This gives the ordinary work a visible presence. Resolve the action through the game rules first, then animate the result. Inspecting a scene or watching an animation never spends a turn. Provide equivalent readable controls for every scene action.
+
+p5's offscreen drawing buffers can support deliberately drawn, low-resolution artwork. The pixel style still needs authored shapes, recognizable portraits, and a consistent scale. Keep small text in HTML/CSS. [p5 graphics buffers](https://p5js.org/reference/p5/createGraphics/).
+
+### Show where a person's influence reaches
+
+A focused D3 view could let the player tap a person or objective and see the relevant connections. A powerful family member may influence one office while having little reach at the next location. An ordinary person helped earlier may hold the specific capability needed now.
+
+Keep relationships distinct from consumable favors and offers. Calling in one favor does not erase the person or everything the player knows about them. Show only information available to the selected side.
+
+Keep positions stable and reveal relevant connections on demand, especially on a phone. D3 can bind fictional game-state objects to displayed elements. It can also calculate layouts rendered through Canvas, so it does not require a separate visual style. A small authored network or route may be simpler to draw directly in p5. [D3 data joins](https://d3js.org/d3-selection/joining), [D3 layouts](https://d3js.org/d3-force).
+
+### Let the service blueprint become an interface
+
+A compact work view could show what is pending, who is occupied, what depends on what, and which completed arrangement would open the next action. The player could inspect a blockage, find the missing cooperation, and assign work while another task is underway.
+
+This develops the Hundred Days influence already in the brief. The blueprint helps the player make decisions about time and dependencies. D3 is one possible way to keep that view synchronized with the changing state. It need not occupy the screen continuously.
+
+### Reconstruct the particular run
+
+An end-of-run sequence could show how an early favor enabled a later arrangement, a broken promise changed someone's response, or unfinished work left a route unavailable. Use pixel scenes or a focused causal diagram, drawing from the actual event log and state changes. That would help the player understand the result and see possibilities for another run.
+
+### Preserve the one-file, offline delivery
+
+Using p5 requires changing the no-library clause in Section 1. The one-file and offline requirements can remain: include a pinned copy of the library directly in `index.html`, retain its required notices, and avoid runtime CDN requests. p5 supplies downloadable library files. [p5 downloads](https://p5js.org/download/).
+
+If the p5 approach is selected, use this runtime language in place of the conflicting clause:
+
+```text
+Use p5.js for the interactive pixel-art scenes and route presentation.
+Keep dialogue, cards, resource descriptions, and controls in HTML/CSS.
+
+Include a pinned copy of the library in the delivered index.html,
+retaining required notices. Keep all game code, content, and assets
+inside that file. Make no runtime network requests.
+
+Selecting a card reveals its applicable people, objects, or arrangements
+using information available to the selected side. Let the player inspect
+those applications before committing. Resolve the action first, then
+animate its consequences.
+
+Show pending work through occupied people, changing objects, available
+services, and completed arrangements. Provide readable controls for
+scene interactions.
+
+Keep simulation state independent of rendering and animation.
+Use native Web Audio for synthesized sound.
+```
+
+D3 remains optional. If included, give it a specific relationship or dependency view and package its pinned code under the same offline requirement. Keep layout state separate from authoritative game state. The scene and the coalition view can show two parts of the same decision: who can make something happen, and what changes when they do.
